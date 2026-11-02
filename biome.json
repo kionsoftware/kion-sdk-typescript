@@ -1,0 +1,4 @@
+{
+  "files": { "ignore": ["src/v3_*", "src/master", "dist"] },
+  "linter": { "enabled": true }
+}

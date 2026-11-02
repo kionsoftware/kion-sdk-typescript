@@ -1,0 +1,49 @@
+{
+  "name": "kion-sdk",
+  "version": "0.14.0",
+  "description": "Typed TypeScript SDK for the Kion API (multi-version).",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/wrapper/index.d.ts",
+      "import": "./dist/wrapper/index.js"
+    },
+    "./v3_14": {
+      "types": "./dist/v3_14/index.d.ts",
+      "import": "./dist/v3_14/index.js"
+    },
+    "./v3_15": {
+      "types": "./dist/v3_15/index.d.ts",
+      "import": "./dist/v3_15/index.js"
+    },
+    "./v3_16": {
+      "types": "./dist/v3_16/index.d.ts",
+      "import": "./dist/v3_16/index.js"
+    },
+    "./v3_17": {
+      "types": "./dist/v3_17/index.d.ts",
+      "import": "./dist/v3_17/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build.mjs && tsc && node fix-dts.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "biome check src/wrapper tests"
+  },
+  "dependencies": {
+    "@hey-api/client-fetch": "^0.10.0"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "esbuild": "^0.28.0",
+    "vitest": "^2.1.0",
+    "@biomejs/biome": "^1.9.0"
+  }
+}
